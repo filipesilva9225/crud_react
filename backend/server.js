@@ -41,13 +41,8 @@ app.delete("/users/: id", async (req, res) => {
     where: {
       id: req.params.id,
     },
-    data: {
-      email: req.body.email,
-      name: req.body.name,
-      age: req.body.age,
-    },
   });
-  res.status(201).json(req.body);
+  res.status(201).json({ message: "User Deleted!" });
 });
 
 app.listen(3001);
